@@ -18,7 +18,9 @@ public class RaceController {
 
     public static void main(String[] args) {
         TortugaThread turtle = new TortugaThread(totalRacePositions);
+        BearThread bear = new BearThread(totalRacePositions);
         LiebreThread hare = new LiebreThread(totalRacePositions);
+        HorseThread horse= new HorseThread(totalRacePositions);
         console.printMenu();
         int selectedOption = -1;
         while (selectedOption == -1) {
@@ -39,8 +41,10 @@ public class RaceController {
         }
         if (selectedOption == 1) {
             resetRoute();
+            bear.start();
             hare.start();
             turtle.start();
+            horse.start();
         }
         
     }
